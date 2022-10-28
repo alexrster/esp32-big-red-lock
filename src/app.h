@@ -1,14 +1,9 @@
 #ifndef VERSION
-#define VERSION "1.1.0"
+#define VERSION "1.1.2"
 #endif
 
 #ifndef __APP_H
 #define __APP_H
-
-#include <Arduino.h>
-#include <ArduinoOTA.h>
-#include <WiFi.h>
-#include <PubSubClient.h>
 
 #define WIFI_HOSTNAME                 "esp32-big-red-lock"
 #define WIFI_SSID                     "qx.zone"
@@ -27,10 +22,5 @@
 #define MQTT_RESTART_CONTROL_TOPIC    MQTT_CLIENT_ID "/restart"
 #define MQTT_STATUS_ONLINE_MSG        "online"
 #define MQTT_STATUS_OFFLINE_MSG       "offline"
-
-unsigned long now = 0;
-
-void wifi_setup();
-bool wifi_loop();
 
 #endif

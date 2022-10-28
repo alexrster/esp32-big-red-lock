@@ -1,4 +1,7 @@
 #include <Arduino.h>
+#include <ArduinoOTA.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
 #include <USB.h>
 #include <USBHIDKeyboard.h>
 
@@ -11,6 +14,7 @@ WiFiClient wifiClient;
 PubSubClient pubSubClient(wifiClient);
 
 unsigned long
+  now = 0,
   lastWifiOnline = 0,
   lastWifiReconnect = 0,
   lastPubSubReconnectAttempt = 0,
